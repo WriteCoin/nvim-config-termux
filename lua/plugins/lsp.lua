@@ -60,6 +60,8 @@ return {
 			vim.lsp.enable("tinymist")
 
 			vim.lsp.enable("rust_analyzer")
+
+			vim.lsp.enable("ts_ls")
 		end,
 	},
 }

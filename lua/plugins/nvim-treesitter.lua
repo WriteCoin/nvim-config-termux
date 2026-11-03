@@ -15,6 +15,7 @@ return {
 				"query",
 				"rust",
 				"lua",
+				"luadoc",
 				"vim",
 				"vimdoc",
 				"python",
@@ -57,7 +58,7 @@ return {
 		-- },
 	},
 	{
-		-- af/if/ac/ic function/class textobjects (main-branch rewrite)
+		-- Текстовые объекты af/if/ac/ic (функции/классы)
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		branch = "main",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },

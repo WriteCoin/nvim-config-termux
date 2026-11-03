@@ -58,6 +58,8 @@ return {
 						enabled = true, -- автофокус на текущем файле
 					},
 					use_libuv_file_watcher = true, -- автообновление через uv
+					-- Отключить следование Neo-tree за `cwd`
+					bind_to_cwd = false,
 				},
 			})
 		end,

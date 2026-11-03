@@ -18,10 +18,16 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Выйти из Terminal mode" })
 
 -- Навигация по окнам из Terminal mode
-vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Окно влево" })
-vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Окно вниз" })
-vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Окно вверх" })
-vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Окно вправо" })
+vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Терминал: Окно влево" })
+vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Терминал: Окно вниз" })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Терминал: Окно вверх" })
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Терминал: Окно вправо" })
+
+-- Навигация по окнам
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Окно влево" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Окно вниз" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Окно вверх" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Окно вправо" })
 
 -- Новая вкладка
 vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<cr>", { desc = "New tab" })
@@ -69,3 +75,9 @@ end
 
 -- Пример привязки клавиши: запуск вручную по <leader>ls
 vim.keymap.set("n", "<leader>ls", start_racket_lsp, { desc = "Запустить Racket LSP" })
+
+-- Отключить стандартное поведение пробела
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
+-- Отключить стандартное действие привязки `gx` для плагина url-open, открытия ссылок под курсором
+vim.g.netrw_nogx = 1

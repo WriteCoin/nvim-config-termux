@@ -2,7 +2,7 @@ return {
 	{
 		-- Автодополнение
 		"saghen/blink.cmp",
-		event = "InsertEnter",
+		event = { "InsertEnter", "CmdlineEnter" },
 		-- main is v2 development (breaking); 1.x release tags ship a prebuilt
 		-- Rust fuzzy matcher, so no build toolchain is needed.
 		version = "1.*",
@@ -84,15 +84,10 @@ return {
 					["<S-Tab>"] = { "select_prev", "fallback" },
 					["<Up>"] = { "select_prev", "fallback" },
 					["<Down>"] = { "select_next", "fallback" },
-					["<CR>"] = { "accept_and_enter", "fallback" },
+					["<CR>"] = { "accept", "fallback" },
 				},
 			},
 
-			-- keep the native wildmenu cmdline (blink's cmdline module remaps
-			-- Tab/arrows in ':' — parity opt-in for later)
-			-- cmdline = { enabled = false },
-
-			-- fuzzy = { implementation = "prefer_rust_with_warning" },
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 	},
